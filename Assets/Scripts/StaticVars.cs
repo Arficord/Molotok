@@ -83,25 +83,10 @@ public static class StaticVars
         set
         {
             _winnsVsEasy = value;
-            if(winnsVsEasy + winnsVsNormal + winnsVsHard + winnsVsInsane >= 1)
-            {
-                //Выйграть у компьютера любой сложности
-            }
-            else
-            if(winnsVsEasy + winnsVsNormal + winnsVsHard + winnsVsInsane >= 10)
-            {
-                //Выйграть у компьютера любой сложности 10 раз
-            }
-            else
-            if (winnsVsEasy + winnsVsNormal + winnsVsHard + winnsVsInsane >= 50)
-            {
-                //Выйграть у компьютера любой сложности 50 раз
-            }
-            else
-            if (winnsVsEasy + winnsVsNormal + winnsVsHard + winnsVsInsane >= 100)
-            {
-                //Выйграть у компьютера любой сложности 100 раз
-            }
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_computer);
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_computer_beginner);
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_computer_advanced);
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_computer_master);
         }
     }
     private static int _winnsVsNormal = 0;
@@ -114,25 +99,11 @@ public static class StaticVars
         set
         {
             _winnsVsNormal = value;
-            if (winnsVsNormal + winnsVsHard + winnsVsInsane >= 1)
-            {
-                //Выйграть у компьютера нормальной или выше сложности
-            }
-            else
-            if (winnsVsNormal + winnsVsHard + winnsVsInsane >= 10)
-            {
-                //Выйграть у компьютера нормальной или выше сложности 10 раз
-            }
-            else
-            if (winnsVsNormal + winnsVsHard + winnsVsInsane >= 50)
-            {
-                //Выйграть у компьютера нормальной или выше сложности 50 раз
-            }
-            else
-            if (winnsVsNormal + winnsVsHard + winnsVsInsane >= 100)
-            {
-                //Выйграть у компьютера нормальной или выше сложности 100 раз
-            }
+            winnsVsEasy++;
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_normal_computer);
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_normal_computer_beginner);
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_normal_computer_advanced);
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_normal_computer_master);
         }
     }
     private static int _winnsVsHard = 0;
@@ -145,25 +116,11 @@ public static class StaticVars
         set
         {
             _winnsVsHard = value;
-            if (winnsVsHard + winnsVsInsane >= 1)
-            {
-                //Выйграть у компьютера сложной или выше сложности
-            }
-            else
-            if (winnsVsHard + winnsVsInsane >= 10)
-            {
-                //Выйграть у компьютера сложной или выше сложности 10 раз
-            }
-            else
-            if ( winnsVsHard + winnsVsInsane >= 50)
-            {
-                //Выйграть у компьютера сложной или выше сложности 50 раз
-            }
-            else
-            if (winnsVsHard + winnsVsInsane >= 100)
-            {
-                //Выйграть у компьютера сложной или выше сложности 100 раз
-            }
+            winnsVsNormal++;
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_difficult_computer);
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_difficult_computer_beginner);
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_difficult_computer_advanced);
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_difficult_computer_master);
         }
     }
     private static int _winnsVsInsane = 0;
@@ -176,25 +133,11 @@ public static class StaticVars
         set
         {
             _winnsVsInsane = value;
-            if (winnsVsInsane >= 1)
-            {
-                //Выйграть у компьютера невозможной или выше сложности
-            }
-            else
-            if (winnsVsInsane >= 10)
-            {
-                //Выйграть у компьютера невозможной или выше сложности 10 раз
-            }
-            else
-            if (winnsVsInsane >= 50)
-            {
-                //Выйграть у компьютера невозможной или выше сложности 50 раз
-            }
-            else
-            if (winnsVsInsane >= 100)
-            {
-                //Выйграть у компьютера невозможной или выше сложности 100 раз
-            }
+            winnsVsHard++;
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_insane_computer);
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_insane_computer_beginner);
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_insane_computer_advanced);
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_insane_computer_master);
         }
     }
     private static int _winnsVsFriend = 0;
@@ -207,25 +150,10 @@ public static class StaticVars
         set
         {
             _winnsVsFriend = value;
-            if (winnsVsFriend >= 1)
-            {
-                //Выйграть у друга
-            }
-            else
-            if (winnsVsFriend >= 10)
-            {
-                //Выйграть у друга 10 раз
-            }
-            else
-            if (winnsVsFriend >= 50)
-            {
-                //Выйграть у друга 50 раз
-            }
-            else
-            if (winnsVsFriend >= 100)
-            {
-                //Выйграть у друга 100 раз
-            }
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_friend);
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_friend_beginner);
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_friend_advanced);
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_friend_master);
         }
     }
     public static int advertSaves = 2;

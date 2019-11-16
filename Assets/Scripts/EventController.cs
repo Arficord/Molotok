@@ -86,11 +86,13 @@ public class EventController : MonoBehaviour
         if (powerPercent == 0)
         {
             Debug.Log("ZERO! "+ powerPercent);
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_like_a_baby);
         }
         else
         if(powerPercent==1)
         {
             Debug.Log("MAXIMUM! " + powerPercent);
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_one_punch);
         }
         else
         {
@@ -159,8 +161,10 @@ public class EventController : MonoBehaviour
         firstPlayerName.text = StaticVars.firstPlayerName;
         secoundPlayerName.text = StaticVars.secondPlayerName;
         singlePlayerName.text = StaticVars.singlePlayerName;
-        startPowerLinearAnimation   ();
+        startPowerLinearAnimation();
         poseSelectedDificult((int)StaticVars.currentDificult);
+
+        GooglePlayMaster.initialize();
     }
 
     void Update()
@@ -297,7 +301,7 @@ public class EventController : MonoBehaviour
 
     public void showAchivements()
     {
-        Social.ShowAchievementsUI();
+        GooglePlayMaster.showAchivementsUI();
     }
 
     public void showAdvert()
