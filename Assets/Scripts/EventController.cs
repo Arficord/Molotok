@@ -69,6 +69,7 @@ public class EventController : MonoBehaviour
     public InputField singlePlayerName;
 
     public GameObject mainMenu;
+    public GameObject mainMenuElements;
     public GameObject battleUI;
     public GameObject selectDificultFrame;
     public GameObject hamerModel;
@@ -218,6 +219,7 @@ public class EventController : MonoBehaviour
     {
         battleUI.SetActive(true);
         mainMenu.SetActive(false);
+        mainMenuElements.SetActive(false);
         battleController.startGame(isVsComputer);
         isPaused = false;
     }
