@@ -30,6 +30,7 @@ public class EventController : MonoBehaviour
     public Image powerLinear;
 
     public float maxHitPower = 1f;
+    private bool powerLinearPauseFlag = false;
     private Coroutine powerLinearScaleCoroutine;
     private IEnumerator powerLinearScaleIEnumerator()
     {
@@ -38,6 +39,10 @@ public class EventController : MonoBehaviour
         bool incrimentFlag = true;
         while (true)
         {
+            while(powerLinearPauseFlag)
+            {
+                yield return null;
+            }
             if(powerLinear.fillAmount<=0)
             {
                 incrimentFlag = true;
@@ -95,6 +100,10 @@ public class EventController : MonoBehaviour
      }
     private IEnumerator hamerHitIEnumerator(float fillAmount)
     {
+        if(battleController.playingPlayers[battleController.curPlayer].isComputer ==false)
+        {
+            pausePowerLinearAnimation();
+        }
         float hitPower = -maxHitPower * fillAmount;
         Vector3 hamerStartRotation = new Vector3(0, 0, 0);
         Vector3 hamerLastRotation = new Vector3(0, 0, 90);
@@ -107,6 +116,11 @@ public class EventController : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         hamerModel.transform.localRotation = Quaternion.Euler(hamerLastRotation);
+
+        if (battleController.playingPlayers[battleController.curPlayer].isComputer == false)
+        {
+            startPowerLinearAnimation();
+        }
 
         battleController.poseNail(hitPower);
         if(!battleController.isWinnerExist)
@@ -145,9 +159,10 @@ public class EventController : MonoBehaviour
         firstPlayerName.text = StaticVars.firstPlayerName;
         secoundPlayerName.text = StaticVars.secondPlayerName;
         singlePlayerName.text = StaticVars.singlePlayerName;
-        powerLinearScaleCoroutine = StartCoroutine(powerLinearScaleIEnumerator());
+        startPowerLinearAnimation   ();
         poseSelectedDificult((int)StaticVars.currentDificult);
     }
+
     void Update()
     {
         if(isPaused)
@@ -353,6 +368,21 @@ public class EventController : MonoBehaviour
 
         allertMaster.showMoneyAllert(moneyToGet);
         StaticVars.money += moneyToGet;
+    }
+    public void startPowerLinearAnimation()
+    {
+        if(powerLinearScaleCoroutine==null)
+        {
+            powerLinearScaleCoroutine = StartCoroutine(powerLinearScaleIEnumerator());
+        }
+        else
+        {
+            powerLinearPauseFlag = false;
+        }
+    }
+    public void pausePowerLinearAnimation()
+    {
+        powerLinearPauseFlag = true;
     }
 }
 
