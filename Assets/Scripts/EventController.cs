@@ -85,18 +85,12 @@ public class EventController : MonoBehaviour
         float powerPercent = getPowerLinearFillAmount();
         if (powerPercent == 0)
         {
-            Debug.Log("ZERO! "+ powerPercent);
             GooglePlayMaster.incrementAchivement(GPGSIds.achievement_like_a_baby);
         }
         else
         if(powerPercent==1)
         {
-            Debug.Log("MAXIMUM! " + powerPercent);
             GooglePlayMaster.incrementAchivement(GPGSIds.achievement_one_punch);
-        }
-        else
-        {
-            Debug.Log(powerPercent);
         }
         return hamerHitIEnumerator(powerPercent);
      }

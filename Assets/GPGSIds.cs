@@ -25,27 +25,27 @@
 public static class GPGSIds
 {
         public const string achievement_defeat_friend = "CgkIh4PKnasKEAIQEA"; // <GPGSID>
-        public const string achievement_like_a_baby = "CgkIh4PKnasKEAIQFQ"; // <GPGSID>
         public const string achievement_defeat_insane_computer_master = "CgkIh4PKnasKEAIQDw"; // <GPGSID>
+        public const string achievement_defeat_hard_computer_beginner = "CgkIh4PKnasKEAIQCQ"; // <GPGSID>
         public const string achievement_defeat_computer = "CgkIh4PKnasKEAIQAA"; // <GPGSID>
         public const string achievement_defeat_insane_computer_beginner = "CgkIh4PKnasKEAIQDQ"; // <GPGSID>
-        public const string achievement_defeat_difficult_computer_beginner = "CgkIh4PKnasKEAIQCQ"; // <GPGSID>
-        public const string achievement_one_punch = "CgkIh4PKnasKEAIQFA"; // <GPGSID>
+        public const string achievement_like_a_baby = "CgkIh4PKnasKEAIQFQ"; // <GPGSID>
         public const string achievement_defeat_friend_advanced = "CgkIh4PKnasKEAIQEg"; // <GPGSID>
-        public const string achievement_defeat_insane_computer = "CgkIh4PKnasKEAIQDA"; // <GPGSID>
+        public const string achievement_defeat_hard_computer_advanced = "CgkIh4PKnasKEAIQCg"; // <GPGSID>
         public const string achievement_defeat_computer_master = "CgkIh4PKnasKEAIQAw"; // <GPGSID>
-        public const string achievement_defeat_difficult_computer_master = "CgkIh4PKnasKEAIQCw"; // <GPGSID>
+        public const string achievement_defeat_normal_computer_master = "CgkIh4PKnasKEAIQBw"; // <GPGSID>
         public const string achievement_defeat_normal_computer_beginner = "CgkIh4PKnasKEAIQBQ"; // <GPGSID>
+        public const string achievement_defeat_hard_computer = "CgkIh4PKnasKEAIQCA"; // <GPGSID>
         public const string achievement_defeat_friend_master = "CgkIh4PKnasKEAIQEw"; // <GPGSID>
         public const string achievement_defeat_normal_computer = "CgkIh4PKnasKEAIQBA"; // <GPGSID>
         public const string achievement_defeat_insane_computer_advanced = "CgkIh4PKnasKEAIQDg"; // <GPGSID>
         public const string achievement_defeat_friend_beginner = "CgkIh4PKnasKEAIQEQ"; // <GPGSID>
         public const string achievement_defeat_computer_advanced = "CgkIh4PKnasKEAIQAg"; // <GPGSID>
         public const string achievement_defeat_computer_beginner = "CgkIh4PKnasKEAIQAQ"; // <GPGSID>
-        public const string achievement_defeat_normal_computer_master = "CgkIh4PKnasKEAIQBw"; // <GPGSID>
+        public const string achievement_defeat_hard_computer_master = "CgkIh4PKnasKEAIQCw"; // <GPGSID>
         public const string achievement_defeat_normal_computer_advanced = "CgkIh4PKnasKEAIQBg"; // <GPGSID>
-        public const string achievement_defeat_difficult_computer = "CgkIh4PKnasKEAIQCA"; // <GPGSID>
-        public const string achievement_defeat_difficult_computer_advanced = "CgkIh4PKnasKEAIQCg"; // <GPGSID>
+        public const string achievement_one_punch = "CgkIh4PKnasKEAIQFA"; // <GPGSID>
+        public const string achievement_defeat_insane_computer = "CgkIh4PKnasKEAIQDA"; // <GPGSID>
 
 }
 

@@ -16,16 +16,19 @@ public static class GooglePlayMaster
     }
     public static void signIn()
     {
+        Debug.Log("Sign In");
         Social.localUser.Authenticate(success => { });
     }
 
     #region Achivements
     public static void incrementAchivement(string id)
     {
+        Debug.Log("Achivement "+ id);
         PlayGamesPlatform.Instance.IncrementAchievement(id, 1, success => { });
     }
     public static void showAchivementsUI()
     {
+        Debug.Log("Achivements UI");
         Social.ShowAchievementsUI();
     }
     #endregion

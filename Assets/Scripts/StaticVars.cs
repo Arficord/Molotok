@@ -29,10 +29,10 @@ public static class StaticVars
         INSANE,
     }
     public const float COMPUTER_INSANE = 0.1f;
-    public const float COMPUTER_HARD = 0.13f;
-    public const float COMPUTER_NORMAL = 0.15f;
-    public const float COMPUTER_EASY = 0.2f;
-    public const float COMPUTER_VERYEASY = 0.30f;
+    public const float COMPUTER_HARD = 0.2f;
+    public const float COMPUTER_NORMAL = 0.27f;
+    public const float COMPUTER_EASY = 0.35f;
+    public const float COMPUTER_VERYEASY = 0.40f;
 
     static StaticVars()
     {
@@ -69,7 +69,6 @@ public static class StaticVars
         set
         {
             _nailID = value;
-            Debug.Log("New ID:" + value);
             EventController.eventController.changedNailSprite();
         }
     }
@@ -117,10 +116,10 @@ public static class StaticVars
         {
             _winnsVsHard = value;
             winnsVsNormal++;
-            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_difficult_computer);
-            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_difficult_computer_beginner);
-            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_difficult_computer_advanced);
-            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_difficult_computer_master);
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_hard_computer);
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_hard_computer_beginner);
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_hard_computer_advanced);
+            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_hard_computer_master);
         }
     }
     private static int _winnsVsInsane = 0;
@@ -207,32 +206,16 @@ public static class StaticVars
         PlayerPrefs.SetString("firstPlayerName", firstPlayerName);
         PlayerPrefs.SetString("secondPlayerName", secondPlayerName);
         PlayerPrefs.SetString("singlePlayerName", singlePlayerName);
-        PlayerPrefs.SetInt("winnsVsEasy", winnsVsEasy);
-        PlayerPrefs.SetInt("winnsVsNormal", winnsVsNormal);
-        PlayerPrefs.SetInt("winnsVsHard", winnsVsHard);
-        PlayerPrefs.SetInt("winnsVsInsane", winnsVsInsane);
-        PlayerPrefs.SetInt("winnsVsFriend", winnsVsFriend);
         PlayerPrefs.SetInt("languge",(int)languge);
         PlayerPrefs.SetInt("nailID", nailID);
         PlayerPrefs.SetString("boughtNailsCode", convertBoolString(boughtNails));
-
-        Debug.Log("SAVING:");
-        Debug.Log("money = " + money);
-        Debug.Log("nail = " + nailID);
-        Debug.Log("Bought size " + boughtNails.Count);
     }
     public static void load()
     {
-        //PlayerPrefs.DeleteAll(); //TODO УДАЛЯЕТ ВСЕ
         money = PlayerPrefs.GetInt("money", money); ;
         firstPlayerName = PlayerPrefs.GetString("firstPlayerName", firstPlayerName);
         secondPlayerName = PlayerPrefs.GetString("secondPlayerName", secondPlayerName);
         singlePlayerName = PlayerPrefs.GetString("singlePlayerName", singlePlayerName);
-        winnsVsEasy = PlayerPrefs.GetInt("winnsVsEasy", winnsVsEasy);
-        winnsVsNormal = PlayerPrefs.GetInt("winnsVsNormal", winnsVsNormal);
-        winnsVsHard = PlayerPrefs.GetInt("winnsVsHard", winnsVsHard);
-        winnsVsInsane = PlayerPrefs.GetInt("winnsVsInsane", winnsVsInsane);
-        winnsVsFriend = PlayerPrefs.GetInt("winnsVsFriend", winnsVsFriend);
         languge = (LANGUGE)PlayerPrefs.GetInt("languge", (int)languge);
         nailID = PlayerPrefs.GetInt("nailID", nailID);
 
@@ -248,12 +231,6 @@ public static class StaticVars
         {
             boughtNails.Add(false);
         }
-
-
-        Debug.Log("LOADING:");
-        Debug.Log("money = " + money);
-        Debug.Log("nail = " + nailID);
-        Debug.Log("Bought size " + boughtNails.Count);
     }
 
     public static string convertBoolString(List<bool> arr)
