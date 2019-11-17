@@ -23,6 +23,7 @@ public class TextController : MonoBehaviour
         THX_ADV = 13,
         BUY = 14,
         USE =15,
+        EXIT = 16,
     }
     public TEXT_CODE textID;
 
@@ -87,6 +88,8 @@ public class TextController : MonoBehaviour
                 return "BUY";
             case TEXT_CODE.USE:
                 return "USE";
+            case TEXT_CODE.EXIT:
+                return "EXIT";
             default:
                 return "NULL_ENG";
         }
@@ -127,6 +130,8 @@ public class TextController : MonoBehaviour
                 return "КУПИТЬ";
             case TEXT_CODE.USE:
                 return "ВЫБРАТЬ";
+            case TEXT_CODE.EXIT:
+                return "ЗАКРЫТЬ";
             default:
                 return getText_Eng(code);
         }
@@ -167,6 +172,8 @@ public class TextController : MonoBehaviour
                 return "KUP";
             case TEXT_CODE.USE:
                 return "UŻYJ";
+            case TEXT_CODE.EXIT:
+                return "ZAMKNĄĆ";
             default:
                 return getText_Eng(code);
         }
