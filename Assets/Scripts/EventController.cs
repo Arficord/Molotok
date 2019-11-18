@@ -85,7 +85,7 @@ public class EventController : MonoBehaviour
         float powerPercent = getPowerLinearFillAmount();
         if (powerPercent == 0)
         {
-            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_like_a_baby);
+           GooglePlayMaster.incrementAchivement(GPGSIds.achievement_like_a_baby);
         }
         else
         if(powerPercent==1)
@@ -163,6 +163,7 @@ public class EventController : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("Working");
         if(isPaused)
         {
             return;
@@ -266,6 +267,7 @@ public class EventController : MonoBehaviour
 
     public void changeLanguge()
     {
+        Debug.Log("Languge changed");
         if((int)StaticVars.languge<2)
         {
             StaticVars.languge++;

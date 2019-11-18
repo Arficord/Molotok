@@ -161,7 +161,8 @@ namespace GooglePlayGames.Android
                                         }
 
                                         mAuthState = AuthState.Authenticated;
-                                        InvokeCallbackOnGameThread(callback, true, "Authentication succeed");
+                                        InvokeCallbackOnGameThread(callback, true, "Authentication succeeded");
+                                        GooglePlayGames.OurUtils.Logger.d("Authentication succeeded");
                                         try
                                         {
                                             using (var activationHint =
@@ -214,12 +215,13 @@ namespace GooglePlayGames.Android
                                             // handle null return
                                         }
 
-                                        LoadAchievements(ignore => {});
+                                        LoadAchievements(ignore => { });
                                     }
                                     else
                                     {
                                         SignOut();
                                         InvokeCallbackOnGameThread(callback, false, "Authentication failed");
+                                        GooglePlayGames.OurUtils.Logger.d("Authentication failed");
                                     }
                                 }
                             );
@@ -233,14 +235,17 @@ namespace GooglePlayGames.Android
                         if (result == 16 /* CommonStatusCodes.CANCELED */)
                         {
                             InvokeCallbackOnGameThread(callback, false, "Authentication canceled");
+                            GooglePlayGames.OurUtils.Logger.d("Authentication canceled");
                         }
                         else if (result == 8 /* CommonStatusCodes.DEVELOPER_ERROR */)
                         {
                             InvokeCallbackOnGameThread(callback, false, "Authentication failed - developer error");
+                            GooglePlayGames.OurUtils.Logger.d("Authentication failed - developer error");
                         }
                         else
                         {
                             InvokeCallbackOnGameThread(callback, false, "Authentication failed");
+                            GooglePlayGames.OurUtils.Logger.d("Authentication failed");
                         }
                     }
                 }
@@ -458,7 +463,10 @@ namespace GooglePlayGames.Android
                             mInvitationCallback = null;
                             mTokenClient.Signout();
                             mAuthState = AuthState.Unauthenticated;
-                            uiCallback?.Invoke();
+                            if (uiCallback != null)
+                            {
+                                uiCallback();
+                            }
                         });
                 }
             }
@@ -466,7 +474,10 @@ namespace GooglePlayGames.Android
             {
                 mTokenClient.Signout();
                 mAuthState = AuthState.Unauthenticated;
-                uiCallback?.Invoke();
+                if (uiCallback != null)
+                {
+                    uiCallback();
+                }
             }
         }
 
@@ -800,7 +811,7 @@ namespace GooglePlayGames.Android
             }
             else
             {
-                AndroidHelperFragment.ShowLeaderboardUI(leaderboardId, span, 
+                AndroidHelperFragment.ShowLeaderboardUI(leaderboardId, span,
                     GetUiSignOutCallbackOnGameThread(callback));
             }
         }
@@ -811,11 +822,20 @@ namespace GooglePlayGames.Android
             {
                 if (status == UIStatus.NotAuthorized)
                 {
-                    SignOut(() => callback?.Invoke(status));
+                    SignOut(() =>
+                    {
+                        if (callback != null)
+                        {
+                            callback(status);
+                        }
+                    });
                 }
                 else
                 {
-                    callback?.Invoke(status);
+                    if (callback != null)
+                    {
+                        callback(status);
+                    }
                 }
             };
 

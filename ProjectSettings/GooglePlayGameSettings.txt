@@ -1,5 +1,5 @@
-lastUpgrade=01004
-proj.pluginVersion=0.10.04
+lastUpgrade=01006
+proj.pluginVersion=0.10.06
 proj.AppId=355202138503
 proj.classDir=Assets
 proj.ConstantsClassName=GPGSIds
