@@ -82,7 +82,7 @@ public static class StaticVars
         set
         {
             _winnsVsEasy = value;
-            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_computer);
+            GooglePlayMaster.unlockAchivement(GPGSIds.achievement_defeat_computer);
             GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_computer_beginner);
             GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_computer_advanced);
             GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_computer_master);
@@ -99,7 +99,7 @@ public static class StaticVars
         {
             _winnsVsNormal = value;
             winnsVsEasy++;
-            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_normal_computer);
+            GooglePlayMaster.unlockAchivement(GPGSIds.achievement_defeat_normal_computer);
             GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_normal_computer_beginner);
             GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_normal_computer_advanced);
             GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_normal_computer_master);
@@ -116,7 +116,7 @@ public static class StaticVars
         {
             _winnsVsHard = value;
             winnsVsNormal++;
-            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_hard_computer);
+            GooglePlayMaster.unlockAchivement(GPGSIds.achievement_defeat_hard_computer);
             GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_hard_computer_beginner);
             GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_hard_computer_advanced);
             GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_hard_computer_master);
@@ -133,7 +133,7 @@ public static class StaticVars
         {
             _winnsVsInsane = value;
             winnsVsHard++;
-            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_insane_computer);
+            GooglePlayMaster.unlockAchivement(GPGSIds.achievement_defeat_insane_computer);
             GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_insane_computer_beginner);
             GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_insane_computer_advanced);
             GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_insane_computer_master);
@@ -149,7 +149,7 @@ public static class StaticVars
         set
         {
             _winnsVsFriend = value;
-            GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_friend);
+            GooglePlayMaster.unlockAchivement(GPGSIds.achievement_defeat_friend);
             GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_friend_beginner);
             GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_friend_advanced);
             GooglePlayMaster.incrementAchivement(GPGSIds.achievement_defeat_friend_master);

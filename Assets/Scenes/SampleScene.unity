@@ -3732,13 +3732,13 @@ MonoBehaviour:
   items:
   - sprite: {fileID: 21300000, guid: f5db5e06454f2ed4995e10606343bf5c, type: 3}
     price: 0
-    name: Basic
+    name: Common
   - sprite: {fileID: 21300000, guid: 268093016281f8f489efd16639324ea9, type: 3}
     price: 100
     name: Golden
   - sprite: {fileID: 21300000, guid: 8bac9afdbfcfdc74e8d1830262ef7e07, type: 3}
     price: 200
-    name: Radiant
+    name: Gradient
   - sprite: {fileID: 21300000, guid: f23d0a4fff1b4a64cbf59f7d6e48a947, type: 3}
     price: 250
     name: Shadow

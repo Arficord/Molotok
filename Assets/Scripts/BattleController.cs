@@ -32,6 +32,7 @@ public class BattleController : MonoBehaviour
         }
 
         curentPlayerText.text = playingPlayers[curPlayer].name;
+        nail.transform.localPosition += new Vector3(0, Random.Range(-1f, 0.5f), 0);
     }
 
     public void poseNail(float length)
